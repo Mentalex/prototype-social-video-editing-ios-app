@@ -7,13 +7,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
+  
+  private lazy var headerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .darkGray
+    view.layer.cornerRadius = 30
+    return view
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    
+    view.addSubview(headerView)
+    headerView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      headerView.topAnchor.constraint(equalTo: view.topAnchor),
+      headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      headerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33)
+    ])
   }
-
-
 }
 
