@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  SocialVideEditing-Swift
 //
 //  Created by Alex Tapia on 01/07/23.
