@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     let view = UIView()
     view.backgroundColor = .darkGray
     view.layer.cornerRadius = 30
+    view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     return view
   }()
 
