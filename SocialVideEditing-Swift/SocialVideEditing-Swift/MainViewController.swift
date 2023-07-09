@@ -16,6 +16,13 @@ class MainViewController: UIViewController {
     view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     return view
   }()
+  
+  private lazy var headerMenuView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .black
+    view.layer.cornerRadius = 25
+    return view
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,6 +34,15 @@ class MainViewController: UIViewController {
       headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
       headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
       headerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.33)
+    ])
+    
+    view.addSubview(headerMenuView)
+    headerMenuView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      headerMenuView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+      headerMenuView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+      headerMenuView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -75),
+      headerMenuView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.20)
     ])
   }
 }
